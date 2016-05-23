@@ -45,8 +45,8 @@ void loop() {
   rightSensorReading = analogRead(rightSensor);  // read right sensor value
   leftSensorReading = analogRead(leftSensor);    // read left sensor value
 
-  rightLEDintensity = map (rightSensorReading, 0, rightBaseline, 0, 255);
-  leftLEDintensity = map (leftSensorReading, 0, leftBaseline, 0, 255);
+  rightLEDintensity = map (rightSensorReading, 0, rightBaseline, 255, 0);
+  leftLEDintensity = map (leftSensorReading, 0, leftBaseline, 255, 0);
 
   analogWrite(rightLED, rightLEDintensity);
   analogWrite(leftLED, leftLEDintensity);
@@ -58,5 +58,4 @@ void loop() {
   Serial.println(leftSensorReading);
   Serial.println();
 
-  delay(1000);
 }
